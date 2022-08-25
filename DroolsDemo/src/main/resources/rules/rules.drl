@@ -1,0 +1,10 @@
+package kieRule;
+
+import com.absa.africa.droolsdemo.entity.Cashsend;
+
+rule "Check Cashsend Amount"
+when
+cashObject : Cashsend(cashsendAmount < 50 && cashsendAmount> 5000)
+then
+cashSendObject.setMessage("Invalid amount: Cashsend amount must be between 50 and 5000");
+end;
